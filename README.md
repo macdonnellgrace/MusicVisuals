@@ -1,8 +1,10 @@
 # Music Visualiser Project
 
-Name:
-
+Name: Sean Tighe
 Student Number: 
+
+Name: Grace MacDonnell
+Student Number: C21307546
 
 ## Instructions
 - Fork this repository and use it a starter project for your assignment
@@ -12,6 +14,8 @@ Student Number:
 - Check out the WaveForm and AudioBandsVisual for examples of how to call the Processing functions from other classes that are not subclasses of PApplet
 
 # Description of the assignment
+
+Our assignment is an audio visualiser based on the song Strawberry Fields Forever by The Beatles
 
 # Instructions
 
