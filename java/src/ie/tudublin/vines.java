@@ -79,28 +79,19 @@ public class vines extends PApplet
 
     public void clouds() 
     {
-        float x1;
-        float y1;
+        strokeWeight(20);
+        stroke(150, 20, 255);
+        fill(150, 20, 255);
 
-        float x2;
-        float y2;
+        line(200,310, 300,310);
+        circle(299,300, 20);
+        circle(200,295, 30);
+        circle(250,280, 50);
 
-        x1 = 100;
-        y1 = 700;
-
-        x2 = 100;
-        y2 = 500;
-                
-        strokeWeight(4);
-        //stroke(130, 200, 200);
-        stroke(130, 60, 255);
-        fill(130, 100, 250);
-        circle(x, y, size);
-        stroke(130, 60, 255);
-        fill(130, 60, 255);
-        circle(x+20, y-20, size/5);
-        circle(x+30, y-5, size/10);
-        
+        line(500,610, 600,610);
+        circle(599,600, 20);
+        circle(500,595, 30);
+        circle(550,580, 50);
     }
 
     float lerpedBuffer[] = new float[1024];
@@ -114,8 +105,8 @@ public class vines extends PApplet
         int highestIndex = 0;
 
         background(150,120,160);
-
-
+        clouds();
+        
         for(int i = 0 ;i < fft.specSize() / 2 ; i ++)
         {
             line(i * 2.0f, height, i * 2.0f, height - fft.getBand(i) * 5.0f);
@@ -147,26 +138,25 @@ public class vines extends PApplet
 
         // if the song gets louder
 
-        if (freq > 100)
+        if (freq > 150)
         {
             // increase the second coordinate of y
             totalY++;
         }
 
         // if it dips below a certain level and isn't at starting height
-        if (freq < 40 && totalY>0)
+        if (freq < 50 && totalY>0)
         {
             // shrinks the tree
             totalY--;
         }
 
-
         // generates trees along ground
         vine(totalX,totalY); 
-        vine(totalX+200,totalY-10); 
+        vine(totalX+200,totalY-30); 
         vine(totalX+400,totalY+10); 
         vine(totalX+600,totalY-12); 
-        vine(totalX+800,totalY+20); 
+        vine(totalX+800,totalY+40); 
         
         }
     }        
