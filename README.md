@@ -1,7 +1,7 @@
 # Music Visualiser Project
 
 Name: Sean Tighe
-Student Number: 
+Student Number: C21329431
 
 
 Name: Grace MacDonnell
