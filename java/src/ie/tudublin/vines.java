@@ -106,6 +106,10 @@ public class vines extends PApplet
 
         background(150,120,160);
         clouds();
+
+        stroke(80, 130, 60);
+        strokeWeight(400);
+        line(width, height, width - 1024, height);
         
         for(int i = 0 ;i < fft.specSize() / 2 ; i ++)
         {
