@@ -37,26 +37,30 @@ public class flower extends PApplet {
         fft = new FFT(width, 1024);
     }
 
-    public void sinFlower(float h, float w, float c) {
-    
+    public void sinFlower(float h, float w, float vol) {
+
         strokeWeight(0);
 
-        fill(20, 255, 220);
-
-        fill(c, 255, 220);
+        // Calculate the color based on the volume
+        float c = map(vol, 0, 1, 200, 500);
+        fill(c, 200, 220);
 
         circle(h + 50, w + 10, 75); // works
         circle(h - 50, w - 10, 75);
         circle(h - 10, w + 50, 75);
         circle(h + 10, w - 50, 75);
 
-        fill(50, 255, 255);
+        fill(c, 200, 255);
+
+        circle(h + 30, w + 20, 50); 
+        circle(h - 30, w - 20, 50);
+        circle(h - 20, w + 30, 50);
+        circle(h + 20, w - 30, 50);
+
+        fill(30, 255, 255);
         circle(h, w, 50);
 
-
     }
-
-
 
     float lerpedBuffer[] = new float[1024];
 
@@ -67,15 +71,21 @@ public class flower extends PApplet {
         float average = 0;
         float sum = 0;
 
+        fft.forward(ab);
+        float highestFrequency = 0;
         int highestIndex = 0;
+
         for(int i = 0 ;i < fft.specSize() / 2 ; i ++)
         {
             line(i * 2.0f, height, i * 2.0f, height - fft.getBand(i) * 5.0f);
 
-            if (fft.getBand(i) > fft.getBand(highestIndex))
+            if (fft.getBand(i) > highestFrequency)
             {
                 highestIndex = i;
+                highestFrequency = fft.getBand(i);
             }
+            
+
         }
 
         // Calculate sum and average of the samples
@@ -84,31 +94,20 @@ public class flower extends PApplet {
 
             sum += abs(ab.get(i));
             lerpedBuffer[i] = lerp(lerpedBuffer[i], ab.get(i), 0.1f);
-
-            average = sum / (float) ab.size();
-            smoothedAmplitude = lerp(smoothedAmplitude, average, 0.5f);
-
-            float freq = (int)(average * 50000.0f);
-
-            System.out.println(freq);
-            
-            float c = map(i, 0, freq, 0, 255);
-
-            //float f = lerpedBuffer[i] * halfH * 4.0f;
-            //float pos = halfH + random(-500,500);
-           // float pos2 = halfW + random(-500,500);
-
-
-            sinFlower(halfH, halfW, c+50); // middle flower
-            sinFlower(height/4, width/4, c+50);
-            sinFlower(height-300, width/3, c+50);
-
-            sinFlower(halfH+300, halfW+300, c+50);
-            sinFlower(halfH-350, halfW+50, c+50);
-            sinFlower(height/5, width-200, c+50);
-                
-            }
-
         }
-    }
 
+        // Calculate the overall volume of the song
+        float c = sum / (float) ab.size();
+        c = c / 2;
+
+        // Pass the overall volume to the sinFlower method
+        sinFlower(halfH, halfW, c); // middle flower
+        sinFlower(height/4, width/4, c);
+        sinFlower(height-300, width/3, c);
+
+        sinFlower(halfH+300, halfW+300, c);
+        sinFlower(halfH-350, halfW+50, c);
+        sinFlower(height/5, width-200, c);
+
+
+    }}

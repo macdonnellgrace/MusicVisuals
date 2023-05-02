@@ -6,9 +6,12 @@ import ddf.minim.AudioInput;
 import ddf.minim.AudioPlayer;
 import ddf.minim.Minim;
 import ddf.minim.analysis.FFT;
-import processing.core.PApplet;
+//import processing.core.PApplet;
 
-public class notes extends PApplet{
+import ie.tudublin.Visual;
+import ie.tudublin.VisualException;
+
+public class notes extends Visual{
 
     Minim m;
     AudioInput ai;
@@ -76,6 +79,8 @@ public class notes extends PApplet{
         background(0);
         colorMode(HSB);
         stroke(255);
+
+        calculateFrequencyBands();
 
         float x = 500;
         float y = 600;
