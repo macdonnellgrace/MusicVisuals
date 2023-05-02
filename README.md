@@ -20,16 +20,17 @@ Our assignment is an audio visualiser based on the song Strawberry Fields Foreve
 
 ![A different image](https://i.scdn.co/image/ab67616d0000b273692d9189b2bd75525893f0c1)
 
-The visualiser is mainly based off the lyrics to the song with natural imagery and other visuals that are inspired by the 
+The visualiser is mainly based off the lyrics to the song with natural imagery and other visuals that are inspired by the psychedelic sounds of the music.
 
 ### Visual 1 - Sean
 A green bush with strawberries on it and the strabwerries grow to a certain size they fall off the bush and the loop
 
 ### Visual 1 - Sean
-
+A solar system that orbits a sun solar flaring at the rate of the music, with planets orbitting the sun.
 Inspired by the "dissonances and eerie space-age sounds" - [The Times](https://en.wikipedia.org/wiki/Strawberry_Fields_Forever#Critical_reception)
 
 ### Visual 1 - Sean
+A binary fractal tree that infinitely expands to the next branch to the next, with the branches swaying to the music.
 
 ![A different image](https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/Beatles_in_%22Strawberry_Fields_Forever%22_music_video.png/220px-Beatles_in_%22Strawberry_Fields_Forever%22_music_video.png)
 
