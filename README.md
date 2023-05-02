@@ -1,11 +1,11 @@
-# Music Visualiser Project
+# 🍓 Music Visualiser Project
 
-Name: Sean Tighe
-Student Number: C21329431
+- Name: Sean Tighe
+- Student Number: C21329431
 
 
-Name: Grace MacDonnell
-Student Number: C21307546
+- Name: Grace MacDonnell
+- Student Number: C21307546
 
 ## Instructions
 - Fork this repository and use it a starter project for your assignment
@@ -20,9 +20,16 @@ Our assignment is an audio visualiser based on the song Strawberry Fields Foreve
 
 ![A different image](https://i.scdn.co/image/ab67616d0000b273692d9189b2bd75525893f0c1)
 
-### Visual 1 - Sean
+The visualiser is mainly based off the lyrics to the song with natural imagery and other visuals that are inspired by the 
 
 ### Visual 1 - Sean
+A green bush with strawberries on it and the strabwerries grow to a certain size they fall off the bush and the loop
+
+### Visual 1 - Sean
+
+Inspired by the "dissonances and eerie space-age sounds"
+
+![The Times](https://en.wikipedia.org/wiki/Strawberry_Fields_Forever#Critical_reception)
 
 ### Visual 1 - Sean
 
