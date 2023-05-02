@@ -27,7 +27,7 @@ A green bush with strawberries on it and the strabwerries grow to a certain size
 
 ### Visual 1 - Sean
 
-Inspired by the "dissonances and eerie space-age sounds" - ![The Times](https://en.wikipedia.org/wiki/Strawberry_Fields_Forever#Critical_reception)
+Inspired by the "dissonances and eerie space-age sounds" - [The Times](https://en.wikipedia.org/wiki/Strawberry_Fields_Forever#Critical_reception)
 
 ### Visual 1 - Sean
 
