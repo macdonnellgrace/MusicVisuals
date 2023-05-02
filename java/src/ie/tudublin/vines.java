@@ -95,11 +95,11 @@ public class vines extends PApplet
         //stroke(130, 200, 200);
         stroke(130, 60, 255);
         fill(130, 100, 250);
-        circle(x, y, size);
+        //circle(x, y, size);
         stroke(130, 60, 255);
         fill(130, 60, 255);
-        circle(x+20, y-20, size/5);
-        circle(x+30, y-5, size/10);
+        //circle(x+20, y-20, size/5);
+        //circle(x+30, y-5, size/10);
         
     }
 
