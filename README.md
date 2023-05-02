@@ -34,7 +34,7 @@ Inspired by the "dissonances and eerie space-age sounds" - [The Times](https://e
 ![A different image](https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/Beatles_in_%22Strawberry_Fields_Forever%22_music_video.png/220px-Beatles_in_%22Strawberry_Fields_Forever%22_music_video.png)
 
 ### Visual 1 - Grace
-This visual is inspired by the lyrics and fields, showing flowers that change colour based on the prominant frequency
+This visual is inspired by the lyrics and fields, showing flowers that change colour based on the prominant frequency. The flowers are also inspired by the 70s fashion and the floral clothing at the time of the song's writing.
 
 ### Visual 1 - Grace
 
