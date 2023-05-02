@@ -35,6 +35,7 @@ public class flower extends PApplet {
         smoothedY = y;
 
         fft = new FFT(width, 1024);
+        
     }
 
     public void sinFlower(float h, float w, float vol) {
@@ -62,13 +63,13 @@ public class flower extends PApplet {
 
     }
 
+
     float lerpedBuffer[] = new float[1024];
 
     public void draw() {
         background(80, 190, 150);
         float halfH = height / 2;
         float halfW = width / 2;
-        float average = 0;
         float sum = 0;
 
         fft.forward(ab);

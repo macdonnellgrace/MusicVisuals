@@ -95,8 +95,8 @@ public class vines extends PApplet
     }
 
     float lerpedBuffer[] = new float[1024];
-    float totalX = 100;
-    float totalY = 0;
+    float totalX = 0;
+    float[] totalY = {0, 0, 0, 0, 0, 0};
 
     public void draw()
     {
@@ -109,8 +109,6 @@ public class vines extends PApplet
         
         for(int i = 0 ;i < fft.specSize() / 2 ; i ++)
         {
-            line(i * 2.0f, height, i * 2.0f, height - fft.getBand(i) * 5.0f);
-
             if (fft.getBand(i) > fft.getBand(highestIndex))
             {
                 highestIndex = i;
@@ -129,34 +127,94 @@ public class vines extends PApplet
 
         smoothedAmplitude = lerp(smoothedAmplitude, average, 0.1f);
         float freq = fft.indexToFreq((int)(smoothedAmplitude * 100000.0f));
-        System.out.println(freq);
-        
 
         freq = freq / 100;
         System.out.println(freq);
 
 
-        // if the song gets louder
+        // generates trees along ground
 
         if (freq > 150)
         {
-            // increase the second coordinate of y
-            totalY++;
-        }
+            // Increase the second coordinate of y for tree 0
+            totalY[5] += freq * 0.01; // Scale rate of change by freq
 
-        // if it dips below a certain level and isn't at starting height
-        if (freq < 50 && totalY>0)
+            totalY[4]--;
+            totalY[3]--;
+            totalY[2]--;
+            totalY[1]--;
+            totalY[0]--;
+        }
+    
+        if (freq > 100 && freq <= 150)
         {
-            // shrinks the tree
-            totalY--;
+            // Increase the second coordinate of y for tree 1
+            totalY[4] += freq * 0.01; // Scale rate of change by freq
+
+            totalY[5]--;
+            totalY[3]--;
+            totalY[2]--;
+            totalY[1]--;
+            totalY[0]--;
+        }
+    
+        if (freq > 75 && freq <= 100)
+        {
+            // Increase the second coordinate of y for tree 2
+            totalY[3] += freq * 0.01; // Scale rate of change by freq
+
+            totalY[5]--;
+            totalY[4]--;
+            totalY[2]--;
+            totalY[1]--;
+            totalY[0]--;
+        }
+    
+        if (freq > 50 && freq <= 75)
+        {
+            // Increase the second coordinate of y for tree 3
+            totalY[2] += freq * 0.01; // Scale rate of change by freq
+
+            totalY[5]--;
+            totalY[4]--;
+            totalY[3]--;
+            totalY[1]--;
+            totalY[0]--;
+        }
+    
+        if (freq > 25 && freq <= 50)
+        {
+            // Increase the second coordinate of y for tree 4
+            totalY[1] += freq * 0.01; // Scale rate of change by freq
+
+            totalY[4]--;
+            totalY[3]--;
+            totalY[2]--;
+            totalY[5]--;
+            totalY[0]--;
+        }
+    
+        if (freq <= 25)
+        {
+            // Increase the second coordinate of y for tree 5
+            totalY[0] += freq * 0.01; // Scale rate of change by freq
+
+            totalY[4]--;
+            totalY[3]--;
+            totalY[2]--;
+            totalY[1]--;
+            totalY[5]--;
         }
 
-        // generates trees along ground
-        vine(totalX,totalY); 
-        vine(totalX+200,totalY-30); 
-        vine(totalX+400,totalY+10); 
-        vine(totalX+600,totalY-12); 
-        vine(totalX+800,totalY+40); 
+        for (int i = 0; i < 6; i++) {
+
+            vine(totalX + (i * 200),totalY[i]); 
+
+            if (totalY[i] < 0){
+                totalY[i] = 0;
+            }
+
+        }
         
         }
     }        
