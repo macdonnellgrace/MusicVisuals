@@ -26,6 +26,8 @@ Our assignment is an audio visualiser based on the song Strawberry Fields Foreve
 
 ### Visual 1 - Sean
 
+![A different image](https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/Beatles_in_%22Strawberry_Fields_Forever%22_music_video.png/220px-Beatles_in_%22Strawberry_Fields_Forever%22_music_video.png)
+
 ### Visual 1 - Grace
 This visual is inspired by the lyrics and fields, showing flowers that change colour based on the prominant frequency
 
