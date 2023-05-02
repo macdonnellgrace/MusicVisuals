@@ -41,6 +41,7 @@ This visual is inspired by the lyrics and fields, showing flowers that change co
 Pines trees that grow with the music, and a blue sky with clouds
 
 ### Visual 1 - Grace
+A ocean with bubbles and fish 
 
 # Instructions
 
