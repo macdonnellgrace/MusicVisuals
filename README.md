@@ -38,6 +38,7 @@ A binary fractal tree that infinitely expands to the next branch to the next, wi
 This visual is inspired by the lyrics and fields, showing flowers that change colour based on the prominant frequency. The flowers are also inspired by the 70s fashion and the floral clothing at the time of the song's writing.
 
 ### Visual 1 - Grace
+Pines trees that grow with the music, and a blue sky with clouds
 
 ### Visual 1 - Grace
 
