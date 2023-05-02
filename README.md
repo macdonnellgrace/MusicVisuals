@@ -18,6 +18,8 @@ Student Number: C21307546
 
 Our assignment is an audio visualiser based on the song Strawberry Fields Forever by The Beatles
 
+https://i.scdn.co/image/ab67616d0000b273692d9189b2bd75525893f0c1
+
 ### Visual 1 - Sean
 
 ### Visual 1 - Sean
