@@ -18,18 +18,18 @@ Student Number: C21307546
 
 Our assignment is an audio visualiser based on the song Strawberry Fields Forever by The Beatles
 
-## Visual 1 - Sean
+### Visual 1 - Sean
 
-## Visual 1 - Sean
+### Visual 1 - Sean
 
-## Visual 1 - Sean
+### Visual 1 - Sean
 
-## Visual 1 - Grace
+### Visual 1 - Grace
 This visual is inspired by the lyrics and fields, showing flowers that change colour based on the prominant frequency
 
-## Visual 1 - Grace
+### Visual 1 - Grace
 
-## Visual 1 - Grace
+### Visual 1 - Grace
 
 # Instructions
 
