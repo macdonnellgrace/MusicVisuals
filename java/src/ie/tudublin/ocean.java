@@ -33,19 +33,16 @@ public class ocean extends PApplet {
         //background(130, 100, 200);
     }
 
-    public void bubble(float x, float y, float size, float amplitude) 
+    public void bubble(float x, float y, float size) 
     {
-        float bubbleY = y - amplitude * 50; // Move the bubble up based on amplitude
-
         strokeWeight(4);
         stroke(130, 60, 255);
         fill(130, 100, 250);
-        circle(x, bubbleY, size);
+        circle(x, y, size);
         stroke(130, 60, 255);
         fill(130, 60, 255);
-        circle(x+20, bubbleY-20, size/5);
-        circle(x+30, bubbleY-5, size/10);
-        
+        circle(x+20, y-20, size/5);
+        circle(x+30, y-5, size/10);    
     }
 
     float lerpedBuffer[] = new float[1024];
@@ -53,15 +50,12 @@ public class ocean extends PApplet {
     public void draw() {
 
         float lerpedY = fishY;
-        background(130, 100, 200);
+        background(130, 100, 240);
 
         // Get the amplitude from the audio ab
         float amplitude = ab.get(0) * 100;
-
         // Move the fish horizontally based on the amplitude
         fishX += fishSpeed;
-
-
         // Wrap the fish around when it reaches the edge of the screen
         if (fishX > width + diameter) {
             fishX = -diameter;
@@ -76,9 +70,32 @@ public class ocean extends PApplet {
         //fishX += fishSpeed * (1 + amplitude);
         lerpedY = lerp(lerpedY, (float)(500 + amplitude * 10), (float)(0.1));
 
-        bubble(100, fishY, 100, amplitude);
-    
+        // -----------------------------------
+        // bubble
+
+        float halfW = width / 2;
+        float size = 100;
+
+        fft.forward(ab);
+
+        int highestIndex = 0;
+        for(int i = 0; i < fft.specSize() / 2; i++) {
+            if (fft.getBand(i) > fft.getBand(highestIndex)) {
+                highestIndex = i;
+            }
+        }
+
+        float freq = fft.indexToFreq(highestIndex);
+
+        // interpolate y position for smoother movement
+        lerpedY2 = lerp(lerpedY2, freq, 0.05f);
+
+        bubble(halfW, -(lerpedY2-500), size);
     }
+    
+    
+    float lerpedY = 0;
+    float lerpedY2 = 0;
 
     public void fish(float x, float y, float c) {
 
