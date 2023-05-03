@@ -29,14 +29,11 @@ public class vines extends PApplet
 
     public void setup() {
         minim = new Minim(this);
-        ap = minim.loadFile("strawberry_fields_forever.mp3", 1024); //CHANGE
+        ap = minim.loadFile("strawberry_fields_forever.mp3", 1024); 
         ap.play();
         ab = ap.mix;
         colorMode(HSB);
-        
-
-        y = height / 2;
-
+    
         fft = new FFT(width, 1024);
     }
 
@@ -48,15 +45,12 @@ public class vines extends PApplet
         float size3;
         
         y1 = 800;
-        //x2 = x-200;
         y2 = 750;
         y3 = y2-70;
         y4 = y3-60;
         size1 = 80;
         size2 = 60;
         size3 = 30;
-
-        //stroke(80, 190, 150); // green
 
         // trunk
         stroke(20, 100, 120);
@@ -72,8 +66,6 @@ public class vines extends PApplet
         triangle(x-size2, y3-y, x+size2, y3-y,x, y3-size2-y);
         stroke(80, 220, 120);
         triangle(x-size3, y4-y, x+size3, y4-y,x, y4-size3-y);
-
-        //triangle(x2-size2, y2-y, x2+size2, y2-y,x2, y2-size2-y);
 
     }
 
@@ -220,6 +212,6 @@ public class vines extends PApplet
 
         }
         
-        }
-    }        
+    }
+}        
 

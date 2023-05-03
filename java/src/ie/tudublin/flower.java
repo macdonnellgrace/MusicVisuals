@@ -73,22 +73,7 @@ public class flower extends PApplet {
         float sum = 0;
 
         fft.forward(ab);
-        float highestFrequency = 0;
-        int highestIndex = 0;
-
-        for(int i = 0 ;i < fft.specSize() / 2 ; i ++)
-        {
-            line(i * 2.0f, height, i * 2.0f, height - fft.getBand(i) * 5.0f);
-
-            if (fft.getBand(i) > highestFrequency)
-            {
-                highestIndex = i;
-                highestFrequency = fft.getBand(i);
-            }
-            
-
-        }
-
+   
         // Calculate sum and average of the samples
         // Also lerp each element of buffer;
         for (int i = 0; i < ab.size(); i++) {

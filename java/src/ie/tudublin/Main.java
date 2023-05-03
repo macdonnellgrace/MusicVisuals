@@ -48,9 +48,9 @@ public class Main
     	//Tree();
 		//strawberry();
 		//Flower();
-		vines();
+		//vines();
 		//notes();
-		//ocean();
+		ocean();
 	}
 	
 	
