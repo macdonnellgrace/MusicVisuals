@@ -73,4 +73,4 @@ I am grateful for the opportunity to have undertaken this project and for the va
 
 The youtube link to our project:
 
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
+[![YouTube](https://youtu.be/yKzXDsH8MI8)](https://youtu.be/yKzXDsH8MI8)
