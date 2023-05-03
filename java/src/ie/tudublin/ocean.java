@@ -58,6 +58,7 @@ public class ocean extends PApplet {
         circle(100, 400, 10);
         circle(700, 700, 10);
         circle(900, 600, 30);
+        circle(800, 100, 30);
     }
 
     float lerpedBuffer[] = new float[1024];
@@ -94,7 +95,7 @@ public class ocean extends PApplet {
 
         float halfW = width / 2;
         float size = 100;
-        float y = 0;
+        float y = -100;
 
         fft.forward(ab);
 
@@ -104,21 +105,20 @@ public class ocean extends PApplet {
                 highestIndex = i;
             }
         }
-
         float freq = fft.indexToFreq(highestIndex);
 
         // interpolate y position for smoother movement
-        lerpedY2 = lerp(lerpedY2, freq, 0.02f);
-        y = lerpedY2 + y;
-
-        bubble(halfW, -(lerpedY2 - 500), size);
-        bubble(halfW + 200, -(lerpedY2 - 300), size - 10);
-        bubble(halfW + 400, -(lerpedY2 - 400), size - 30);
-        bubble(halfW - 400, -(lerpedY2 - 400), size + 10);
-
-        bubble(halfW - 200, -(lerpedY2 - 600), size - 10);
-
-        bubble(halfW - 200, -(lerpedY2 - 200), size);
+        lerpedY2 = lerp(lerpedY2, freq, 0.005f);
+        y += lerpedY2 * size * 0.1f;
+        
+        bubble(halfW, -(y - 500), size);
+        bubble(halfW + 200, -(y - 300), size - 10);
+        bubble(halfW + 400, -(y - 400), size - 30);
+        bubble(halfW - 400, -(y - 400), size + 10);
+        
+        bubble(halfW - 200, -(y - 600), size - 10);
+        
+        bubble(halfW - 200, -(y - 200), size);
     }
 
     float lerpedY = 0;
@@ -135,8 +135,6 @@ public class ocean extends PApplet {
         float tailX = x - diameter / 4 - tailSize / 2;
         float tailY = y;
         triangle(tailX, tailY, tailX - tailSize, tailY - tailSize / 2, tailX - tailSize, tailY + tailSize / 2);
-        // triangle(tailX, tailY, tailX - tailSize, tailY + tailSize / 2, tailX -
-        // tailSize, tailY - tailSize / 2);
 
         ellipse(x, y, diameter, diameter / 3);
 
