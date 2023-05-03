@@ -71,6 +71,7 @@ public class vines extends PApplet
 
     public void clouds() 
     {
+
         strokeWeight(20);
         stroke(150, 20, 255);
         fill(150, 20, 255);
