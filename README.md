@@ -1,4 +1,4 @@
-# 🍓 Music Visualiser Project
+# Music Visualiser Project
 
 - Name: Sean Tighe
 - Student Number: C21329431
@@ -66,6 +66,8 @@ One of the biggest things I learned in this assignment was how to fully use the 
 
 
 ### Sean
+
+🍓🍓🍓
 
 The youtube link to our project:
 
