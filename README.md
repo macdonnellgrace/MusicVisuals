@@ -23,24 +23,29 @@ To play the visuals you run the main file, making sure that the song is in the d
 
 # How it works
 
-### Visual 1 - 
+### Visual 1 - Strawberry
 #### Sean
 A green bush with strawberries on it and the strawberries grow to a certain size they fall off the bush and the loop. It uses a PNG image of a strawberry and the backdrop PNG image of a bush. This was done because of the strawberry reference
 
-### Visual 2 - Grace
+### Visual 2 - Flower
+#### Grace
 This visual is inspired by the lyrics and fields, showing flowers that change colour based on the prominant frequency. The flowers are also inspired by the 70s fashion and the floral clothing at the time of the song's writing.
 
-### Visual 3 - Grace
+### Visual 3 - Vines (Trees)
+#### Grace
 Pines trees that grow with the different frequencies of music on a sky backdrop. Each tree grows respective to bands of frequencies, and a line in the song references trees.
 
-### Visual 4 - Sean
+### Visual 4 - Solar
+#### Sean
 A solar system that orbits a sun solar flaring at the rate of the music, with planets orbitting the sun.
 Inspired by the "dissonances and eerie space-age sounds" - [The Times](https://en.wikipedia.org/wiki/Strawberry_Fields_Forever#Critical_reception)
 
-### Visual 5 - Sean
+### Visual 5 - Tree
+#### Sean
 A binary fractal tree that infinitely expands to the next branch to the next, with the branches swaying to the music. It uses the binary fractal maths along with colour changing branches to do this. The song lyrics also mention trees.
 
-### Visual 6 - Grace
+### Visual 6 - Ocean
+#### Grace
 A ocean with fish cycling along the water with bubbles that bubble up and down based on overall frequency level. This was a loose interpretation of the natural imagery in the song.
 
 
@@ -56,11 +61,13 @@ I'm most proud of my solar system visual in the project, as it was the hardest t
 # What I learned
 
 ### Grace
-One of the biggest things I learned in this assignment was how to fully use the map and lerp function. The project also gave me a better understanding of how to use GitHub not only myself but collaboratively, as we both needed to communicate with each other when branching and merging.
+One of the biggest things I learned in this assignment was how to fully use the map and lerp function. The project also gave me a better understanding of how to use GitHub not only myself but collaboratively, as we both needed to communicate with each other when branching and merging. It also in general helped develop my Java skills further.
 
 
 ### Sean
-I also learned how to work as a team using GitHub while communicating and merging branches with main, as well as generally getting use to common GitHub commands.
+I also learned how to work as a team using GitHub while communicating and merging branches with main, as well as generally getting use to common GitHub commands. I understand how to program in Java better and how to manipluate classes and objects, in particular how to use the Processing library.
+
+I am grateful for the opportunity to have undertaken this project and for the valuable lessons it has taught me. I remain committed to further honing my skills and leveraging the knowledge gained from this project to create even more impactful projects in the future
 
 🍓🍓🍓
 
