@@ -7,13 +7,6 @@
 - Name: Grace MacDonnell
 - Student Number: C21307546
 
-## Instructions
-- Fork this repository and use it a starter project for your assignment
-- Create a new package named your student number and put all your code in this package.
-- You should start by creating a subclass of ie.tudublin.Visual
-- There is an example visualiser called MyVisual in the example package
-- Check out the WaveForm and AudioBandsVisual for examples of how to call the Processing functions from other classes that are not subclasses of PApplet
-
 # Description of the assignment
 
 Our assignment is an audio visualiser based on the song Strawberry Fields Forever by The Beatles
@@ -31,23 +24,23 @@ To play the visuals you run the main file, making sure that the song is in the d
 # How it works
 
 ### Visual 1 - Sean
-A green bush with strawberries on it and the strabwerries grow to a certain size they fall off the bush and the loop
+A green bush with strawberries on it and the strawberries grow to a certain size they fall off the bush and the loop. It uses a PNG image of a strawberry and the backdrop PNG image of a bush. This was done because of the strawberry reference
 
 ### Visual 2 - Grace
 This visual is inspired by the lyrics and fields, showing flowers that change colour based on the prominant frequency. The flowers are also inspired by the 70s fashion and the floral clothing at the time of the song's writing.
 
 ### Visual 3 - Grace
-Pines trees that grow with the different frequencies of music on a sky backdrop
+Pines trees that grow with the different frequencies of music on a sky backdrop. Each tree grows respective to bands of frequencies, and a line in the song references trees.
 
 ### Visual 4 - Sean
 A solar system that orbits a sun solar flaring at the rate of the music, with planets orbitting the sun.
 Inspired by the "dissonances and eerie space-age sounds" - [The Times](https://en.wikipedia.org/wiki/Strawberry_Fields_Forever#Critical_reception)
 
 ### Visual 5 - Sean
-A binary fractal tree that infinitely expands to the next branch to the next, with the branches swaying to the music.
+A binary fractal tree that infinitely expands to the next branch to the next, with the branches swaying to the music. It uses the binary fractal maths along with colour changing branches to do this. The song lyrics also mention trees.
 
 ### Visual 6 - Grace
-A ocean with fish cycling along the water with bubbles that bubble up and down based on overall frequency level
+A ocean with fish cycling along the water with bubbles that bubble up and down based on overall frequency level. This was a loose interpretation of the natural imagery in the song.
 
 
 # What I am most proud of in the assignment
@@ -66,6 +59,7 @@ One of the biggest things I learned in this assignment was how to fully use the 
 
 
 ### Sean
+I also learned how to work as a team using GitHub while communicating and merging branches with main, as well as generally getting use to common GitHub commands.
 
 🍓🍓🍓
 
