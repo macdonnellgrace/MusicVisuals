@@ -23,7 +23,8 @@ To play the visuals you run the main file, making sure that the song is in the d
 
 # How it works
 
-### Visual 1 - ####Sean
+### Visual 1 - 
+#### Sean
 A green bush with strawberries on it and the strawberries grow to a certain size they fall off the bush and the loop. It uses a PNG image of a strawberry and the backdrop PNG image of a bush. This was done because of the strawberry reference
 
 ### Visual 2 - Grace
