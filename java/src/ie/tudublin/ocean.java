@@ -1,0 +1,99 @@
+package ie.tudublin;
+
+import ddf.minim.AudioBuffer;
+import ddf.minim.AudioInput;
+import ddf.minim.AudioPlayer;
+import ddf.minim.Minim;
+import ddf.minim.analysis.FFT;
+import processing.core.PApplet;
+
+public class ocean extends PApplet {
+    Minim minim;
+    AudioPlayer ap;
+    AudioBuffer ab;
+    FFT fft;
+
+    float fishX = 0;
+    float fishY = 500;
+    float fishSpeed = 1;
+    float diameter = 75;
+
+    public void settings() {
+        size(1024, 1000);
+    }
+
+    public void setup() {
+        minim = new Minim(this);
+        ap = minim.loadFile("strawberry_fields_forever.mp3", 1024);
+        ap.play();
+        ab = ap.mix;
+        colorMode(HSB);
+        fft = new FFT(width, ab.size());
+
+        //background(130, 100, 200);
+    }
+
+    public void bubble(float x, float y, float size, float amplitude) 
+    {
+        float bubbleY = y - amplitude * 50; // Move the bubble up based on amplitude
+
+        strokeWeight(4);
+        stroke(130, 60, 255);
+        fill(130, 100, 250);
+        circle(x, bubbleY, size);
+        stroke(130, 60, 255);
+        fill(130, 60, 255);
+        circle(x+20, bubbleY-20, size/5);
+        circle(x+30, bubbleY-5, size/10);
+        
+    }
+
+    float lerpedBuffer[] = new float[1024];
+
+    public void draw() {
+
+        float lerpedY = fishY;
+        background(130, 100, 200);
+
+        // Get the amplitude from the audio ab
+        float amplitude = ab.get(0) * 100;
+
+        // Move the fish horizontally based on the amplitude
+        fishX += fishSpeed;
+
+
+        // Wrap the fish around when it reaches the edge of the screen
+        if (fishX > width + diameter) {
+            fishX = -diameter;
+        }
+
+        // Draw the fish
+        fish(fishX, fishY, 20);
+        fish(fishX+100, fishY-100, 30);
+        fish(fishX+500, fishY+300, 10);
+        fish(fishX-200, fishY-300, 0);
+
+        //fishX += fishSpeed * (1 + amplitude);
+        lerpedY = lerp(lerpedY, (float)(500 + amplitude * 10), (float)(0.1));
+
+        bubble(100, fishY, 100, amplitude);
+    
+    }
+
+    public void fish(float x, float y, float c) {
+
+        noStroke();
+
+        fill(c, 153, 255);
+        
+        // Draw the tail
+        float tailSize = diameter / 3;
+        float tailX = x - diameter / 4 - tailSize / 2;
+        float tailY = y;
+        triangle(tailX, tailY, tailX - tailSize, tailY - tailSize / 2, tailX - tailSize, tailY + tailSize / 2);
+        //triangle(tailX, tailY, tailX - tailSize, tailY + tailSize / 2, tailX - tailSize, tailY - tailSize / 2);
+
+        ellipse(x, y, diameter, diameter / 3);
+
+    }
+}
