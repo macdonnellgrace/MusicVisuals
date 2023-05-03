@@ -57,6 +57,7 @@ I'm most proud of learning how to utilise the map() function and lerp() function
 
 
 ### Sean
+I'm most proud of my solar system visual in the project, as it was the hardest to code and required a lot of trial and error, particularly when figuring out how to get the ring on the planet. 
 
 # What I learned
 
