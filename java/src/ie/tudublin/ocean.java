@@ -44,6 +44,20 @@ public class ocean extends PApplet {
         circle(x+30, y-5, size/10);   
     }
 
+    public void backgroundBub()
+    {
+        strokeWeight(3);
+        stroke(130, 60, 255);
+        fill(130, 100, 250);
+        circle(100, 100, 40);
+        circle(500, 300, 20);
+        circle(300, 500, 20);
+        circle(550, 350, 10);
+
+        circle(550, 150, 10);
+
+    }
+
     float lerpedBuffer[] = new float[1024];
 
     public void draw() {
@@ -51,7 +65,7 @@ public class ocean extends PApplet {
         float lerpedY = fishY;
         background(130, 100, 240);
 
-        bubble(100, 100, 70);
+        backgroundBub();
 
         // Get the amplitude from the audio ab
         float amplitude = ab.get(0) * 100;
@@ -67,6 +81,8 @@ public class ocean extends PApplet {
         fish(fishX+100, fishY-100, 30);
         fish(fishX+500, fishY+300, 10);
         fish(fishX-200, fishY-300, 0);
+
+        fish(fishX-400, fishY+100, 40);
 
         //fishX += fishSpeed * (1 + amplitude);
         lerpedY = lerp(lerpedY, (float)(500 + amplitude * 10), (float)(0.1));
@@ -89,11 +105,12 @@ public class ocean extends PApplet {
         float freq = fft.indexToFreq(highestIndex);
 
         // interpolate y position for smoother movement
-        lerpedY2 = lerp(lerpedY2, freq, 0.05f);
+        lerpedY2 = lerp(lerpedY2, freq, 0.02f);
 
         bubble(halfW, -(lerpedY2-500), size);
         bubble(halfW+200, -(lerpedY2-300), size-10);
         bubble(halfW+400, -(lerpedY2-400), size-30);
+        bubble(halfW-400, -(lerpedY2-400), size);
     }
     
     
@@ -104,7 +121,7 @@ public class ocean extends PApplet {
 
         noStroke();
 
-        fill(c, 153, 255);
+        fill(c, 170, 255);
         
         // Draw the tail
         float tailSize = diameter / 3;
