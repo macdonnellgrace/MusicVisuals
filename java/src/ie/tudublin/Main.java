@@ -55,7 +55,7 @@ public class Main
 		System.out.println("Hello world");
 
     	//Tree();
-		Spiral();
+		//Spiral();
 		//strawberry();
 		//Flower();
 		//vines();
