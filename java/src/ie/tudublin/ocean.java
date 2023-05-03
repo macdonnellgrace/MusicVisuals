@@ -1,7 +1,6 @@
 package ie.tudublin;
 
 import ddf.minim.AudioBuffer;
-import ddf.minim.AudioInput;
 import ddf.minim.AudioPlayer;
 import ddf.minim.Minim;
 import ddf.minim.analysis.FFT;
@@ -42,7 +41,7 @@ public class ocean extends PApplet {
         stroke(130, 60, 255);
         fill(130, 60, 255);
         circle(x+20, y-20, size/5);
-        circle(x+30, y-5, size/10);    
+        circle(x+30, y-5, size/10);   
     }
 
     float lerpedBuffer[] = new float[1024];
@@ -51,6 +50,8 @@ public class ocean extends PApplet {
 
         float lerpedY = fishY;
         background(130, 100, 240);
+
+        bubble(100, 100, 70);
 
         // Get the amplitude from the audio ab
         float amplitude = ab.get(0) * 100;
@@ -91,6 +92,8 @@ public class ocean extends PApplet {
         lerpedY2 = lerp(lerpedY2, freq, 0.05f);
 
         bubble(halfW, -(lerpedY2-500), size);
+        bubble(halfW+200, -(lerpedY2-300), size-10);
+        bubble(halfW+400, -(lerpedY2-400), size-30);
     }
     
     
