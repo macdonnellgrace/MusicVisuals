@@ -33,20 +33,18 @@ To play the visuals you run the main file, making sure that the song is in the d
 ### Visual 1 - Sean
 A green bush with strawberries on it and the strabwerries grow to a certain size they fall off the bush and the loop
 
-### Visual 2 - Sean
+### Visual 2 - Grace
+This visual is inspired by the lyrics and fields, showing flowers that change colour based on the prominant frequency. The flowers are also inspired by the 70s fashion and the floral clothing at the time of the song's writing.
+
+### Visual 3 - Grace
+Pines trees that grow with the different frequencies of music on a sky backdrop
+
+### Visual 4 - Sean
 A solar system that orbits a sun solar flaring at the rate of the music, with planets orbitting the sun.
 Inspired by the "dissonances and eerie space-age sounds" - [The Times](https://en.wikipedia.org/wiki/Strawberry_Fields_Forever#Critical_reception)
 
-### Visual 3 - Sean
+### Visual 5 - Sean
 A binary fractal tree that infinitely expands to the next branch to the next, with the branches swaying to the music.
-
-![A different image](https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/Beatles_in_%22Strawberry_Fields_Forever%22_music_video.png/220px-Beatles_in_%22Strawberry_Fields_Forever%22_music_video.png)
-
-### Visual 4 - Grace
-This visual is inspired by the lyrics and fields, showing flowers that change colour based on the prominant frequency. The flowers are also inspired by the 70s fashion and the floral clothing at the time of the song's writing.
-
-### Visual 5 - Grace
-Pines trees that grow with the different frequencies of music on a sky backdrop
 
 ### Visual 6 - Grace
 A ocean with fish cycling along the water with bubbles that bubble up and down based on overall frequency level
