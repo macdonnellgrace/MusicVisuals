@@ -44,6 +44,12 @@ public class Main
         processing.core.PApplet.runSketch( a, new notes());
     }
 
+	public static void ocean()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new ocean());
+    }
+
 	public static void main(String[] args) throws InterruptedException
 	{
 		System.out.println("Hello world");
@@ -54,6 +60,7 @@ public class Main
 		//Flower();
 		//vines();
 		//notes();
+		ocean();
 	}
 	
 	

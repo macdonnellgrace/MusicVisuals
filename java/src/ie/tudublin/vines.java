@@ -29,14 +29,11 @@ public class vines extends PApplet
 
     public void setup() {
         minim = new Minim(this);
-        ap = minim.loadFile("strawberry_fields_forever.mp3", 1024); //CHANGE
+        ap = minim.loadFile("strawberry_fields_forever.mp3", 1024); 
         ap.play();
         ab = ap.mix;
         colorMode(HSB);
-        
-
-        y = height / 2;
-
+    
         fft = new FFT(width, 1024);
     }
 
@@ -48,15 +45,12 @@ public class vines extends PApplet
         float size3;
         
         y1 = 800;
-        //x2 = x-200;
         y2 = 750;
         y3 = y2-70;
         y4 = y3-60;
         size1 = 80;
         size2 = 60;
         size3 = 30;
-
-        //stroke(80, 190, 150); // green
 
         // trunk
         stroke(20, 100, 120);
@@ -73,39 +67,29 @@ public class vines extends PApplet
         stroke(80, 220, 120);
         triangle(x-size3, y4-y, x+size3, y4-y,x, y4-size3-y);
 
-        //triangle(x2-size2, y2-y, x2+size2, y2-y,x2, y2-size2-y);
-
     }
 
     public void clouds() 
     {
-        float x1;
-        float y1;
 
-        float x2;
-        float y2;
+        strokeWeight(20);
+        stroke(150, 20, 255);
+        fill(150, 20, 255);
 
-        x1 = 100;
-        y1 = 700;
+        line(200,310, 300,310);
+        circle(299,300, 20);
+        circle(200,295, 30);
+        circle(250,280, 50);
 
-        x2 = 100;
-        y2 = 500;
-                
-        strokeWeight(4);
-        //stroke(130, 200, 200);
-        stroke(130, 60, 255);
-        fill(130, 100, 250);
-        //circle(x, y, size);
-        stroke(130, 60, 255);
-        fill(130, 60, 255);
-        //circle(x+20, y-20, size/5);
-        //circle(x+30, y-5, size/10);
-        
+        line(500,610, 600,610);
+        circle(599,600, 20);
+        circle(500,595, 30);
+        circle(550,580, 50);
     }
 
     float lerpedBuffer[] = new float[1024];
-    float totalX = 100;
-    float totalY = 0;
+    float totalX = 0;
+    float[] totalY = {0, 0, 0, 0, 0, 0};
 
     public void draw()
     {
@@ -114,12 +98,14 @@ public class vines extends PApplet
         int highestIndex = 0;
 
         background(150,120,160);
+        clouds();
 
-
+        stroke(80, 130, 60);
+        strokeWeight(400);
+        line(width, height, width - 1024, height);
+        
         for(int i = 0 ;i < fft.specSize() / 2 ; i ++)
         {
-            line(i * 2.0f, height, i * 2.0f, height - fft.getBand(i) * 5.0f);
-
             if (fft.getBand(i) > fft.getBand(highestIndex))
             {
                 highestIndex = i;
@@ -138,36 +124,95 @@ public class vines extends PApplet
 
         smoothedAmplitude = lerp(smoothedAmplitude, average, 0.1f);
         float freq = fft.indexToFreq((int)(smoothedAmplitude * 100000.0f));
-        System.out.println(freq);
-        
 
         freq = freq / 100;
         System.out.println(freq);
 
 
-        // if the song gets louder
-
-        if (freq > 100)
-        {
-            // increase the second coordinate of y
-            totalY++;
-        }
-
-        // if it dips below a certain level and isn't at starting height
-        if (freq < 40 && totalY>0)
-        {
-            // shrinks the tree
-            totalY--;
-        }
-
-
         // generates trees along ground
-        vine(totalX,totalY); 
-        vine(totalX+200,totalY-10); 
-        vine(totalX+400,totalY+10); 
-        vine(totalX+600,totalY-12); 
-        vine(totalX+800,totalY+20); 
-        
+
+        if (freq > 150)
+        {
+            // Increase the second coordinate of y for tree 0
+            totalY[5] += freq * 0.01; // Scale rate of change by freq
+
+            totalY[4]--;
+            totalY[3]--;
+            totalY[2]--;
+            totalY[1]--;
+            totalY[0]--;
         }
-    }        
+    
+        if (freq > 100 && freq <= 150)
+        {
+            // Increase the second coordinate of y for tree 1
+            totalY[4] += freq * 0.01; // Scale rate of change by freq
+
+            totalY[5]--;
+            totalY[3]--;
+            totalY[2]--;
+            totalY[1]--;
+            totalY[0]--;
+        }
+    
+        if (freq > 75 && freq <= 100)
+        {
+            // Increase the second coordinate of y for tree 2
+            totalY[3] += freq * 0.01; // Scale rate of change by freq
+
+            totalY[5]--;
+            totalY[4]--;
+            totalY[2]--;
+            totalY[1]--;
+            totalY[0]--;
+        }
+    
+        if (freq > 50 && freq <= 75)
+        {
+            // Increase the second coordinate of y for tree 3
+            totalY[2] += freq * 0.01; // Scale rate of change by freq
+
+            totalY[5]--;
+            totalY[4]--;
+            totalY[3]--;
+            totalY[1]--;
+            totalY[0]--;
+        }
+    
+        if (freq > 25 && freq <= 50)
+        {
+            // Increase the second coordinate of y for tree 4
+            totalY[1] += freq * 0.01; // Scale rate of change by freq
+
+            totalY[4]--;
+            totalY[3]--;
+            totalY[2]--;
+            totalY[5]--;
+            totalY[0]--;
+        }
+    
+        if (freq <= 25)
+        {
+            // Increase the second coordinate of y for tree 5
+            totalY[0] += freq * 0.01; // Scale rate of change by freq
+
+            totalY[4]--;
+            totalY[3]--;
+            totalY[2]--;
+            totalY[1]--;
+            totalY[5]--;
+        }
+
+        for (int i = 0; i < 6; i++) {
+
+            vine(totalX + (i * 200),totalY[i]); 
+
+            if (totalY[i] < 0){
+                totalY[i] = 0;
+            }
+
+        }
+        
+    }
+}        
 
