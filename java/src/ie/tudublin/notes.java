@@ -79,8 +79,6 @@ public class notes extends Visual{
         colorMode(HSB);
         stroke(255);
 
-        calculateFrequencyBands();
-
         float x = 500;
         float y = 600;
         float size = 100;
@@ -95,6 +93,7 @@ public class notes extends Visual{
             f = abs(lerpedBuffer[i] * half * 5.0f);
             //line(i, half + f, i, half - f);
             bubble(x,(y-f), size);
+            bubble(x+100,(y-f-30), size);
             
         }
 
