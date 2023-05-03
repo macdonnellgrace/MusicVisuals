@@ -22,6 +22,14 @@ Our assignment is an audio visualiser based on the song Strawberry Fields Foreve
 
 The visualiser is mainly based off the lyrics to the song with natural imagery and other visuals that are inspired by the psychedelic sounds of the music.
 
+
+
+# Instructions
+
+To play the visuals you run the main file, making sure that the song is in the data directory
+
+# How it works
+
 ### Visual 1 - Sean
 A green bush with strawberries on it and the strabwerries grow to a certain size they fall off the bush and the loop
 
@@ -43,61 +51,15 @@ Pines trees that grow with the different frequencies of music on a sky backdrop
 ### Visual 1 - Grace
 A ocean with fish cycling along the water with bubbles that bubble up and down based on overall frequency level
 
-# Instructions
 
-To play the visuals you run the main file, making sure that the song is in the data directory
+# What I am most proud of in the assignment
 
-# How it works
+### Grace
+
+
+### Sean
+
 
 The youtube link to our project:
 
 [![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
-
-# What I am most proud of in the assignment
-
-# Markdown Tutorial
-
-This is *emphasis*
-
-This is a bulleted list
-
-- Item
-- Item
-
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](http://bryanduggan.org)
-
-# Headings
-## Headings
-#### Headings
-##### Headings
-
-This is code:
-
-```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-So is this without specifying the language:
-
-```
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
