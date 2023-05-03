@@ -55,6 +55,8 @@ public class ocean extends PApplet {
         circle(550, 350, 10);
 
         circle(550, 150, 10);
+        circle(550, 500, 20);
+        circle(100, 400, 10);
 
     }
 
@@ -92,6 +94,7 @@ public class ocean extends PApplet {
 
         float halfW = width / 2;
         float size = 100;
+        float y = 0;
 
         fft.forward(ab);
 
@@ -105,12 +108,15 @@ public class ocean extends PApplet {
         float freq = fft.indexToFreq(highestIndex);
 
         // interpolate y position for smoother movement
-        lerpedY2 = lerp(lerpedY2, freq, 0.02f);
+        lerpedY2 = lerp(lerpedY2, freq, 0.2f);
+        y = lerpedY2 + y;
 
         bubble(halfW, -(lerpedY2-500), size);
         bubble(halfW+200, -(lerpedY2-300), size-10);
         bubble(halfW+400, -(lerpedY2-400), size-30);
-        bubble(halfW-400, -(lerpedY2-400), size);
+        bubble(halfW-400, -(lerpedY2-400), size+10);
+
+        bubble(halfW-200, -(lerpedY2-200), size);
     }
     
     
