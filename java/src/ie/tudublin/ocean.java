@@ -28,8 +28,6 @@ public class ocean extends PApplet {
         ab = ap.mix;
         colorMode(HSB);
         fft = new FFT(width, ab.size());
-
-        // background(130, 100, 200);
     }
 
     public void bubble(float x, float y, float size) {
@@ -87,7 +85,6 @@ public class ocean extends PApplet {
 
         fish(fishX - 400, fishY + 100, 40);
 
-        // fishX += fishSpeed * (1 + amplitude);
         lerpedY = lerp(lerpedY, (float) (500 + amplitude * 10), (float) (0.1));
 
         // -----------------------------------
